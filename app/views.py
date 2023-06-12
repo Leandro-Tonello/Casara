@@ -18,12 +18,12 @@ def home(request):
         }
     )
 
-def contact(request):
+def leerRegistro(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/contact.html',
+        'app/leerRegistro.html',
         {
             'title':'Contact',
             'message':'Your contact page.',
