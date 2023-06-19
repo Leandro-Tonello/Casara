@@ -7,14 +7,14 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import gettext_lazy as _
 
 class BootstrapAuthenticationForm(AuthenticationForm):
-    """Authentication form which uses boostrap CSS."""
+    """Authentication form which uses Bootstrap CSS."""
     username = forms.CharField(max_length=254,
-                               widget=forms.TextInput({
+                               widget=forms.TextInput(attrs={
                                    'class': 'form-control',
-                                   'placeholder': 'User name'}))
+                                   'placeholder': 'Usuario'}))
     password = forms.CharField(label=_("Password"),
-                               widget=forms.PasswordInput({
+                               widget=forms.PasswordInput(attrs={
                                    'class': 'form-control',
-                                   'placeholder':'Password'}))
+                                   'placeholder': 'Password'}))
 
 

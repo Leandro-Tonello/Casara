@@ -5,38 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - My Django Application</title>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
-
-    
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />   
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Cassará</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">Cassará</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div name="menuDerecha" class="collapse navbar-collapse " id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    {% if user.is_authenticated %}
+                    <!-- Si el usuario está autenticado, mostrar el botón de cierre de sesión y el nombre del usuario -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Reporte</a>
+                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Buscar</a>
+                        <span class="nav-link">¡Bienvenido, {{ user.username }}!</span>
                     </li>
+                    {% else %}
+                    <!-- Si el usuario no está autenticado, mostrar el botón de inicio de sesión -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    {% endif %}
                 </ul>
-                
             </div>
         </div>
     </nav>
 
+
     <div class="container body-content">
         {% block content %}{% endblock %}
-        
         <footer>
-            
         </footer>
     </div>
 

@@ -12,7 +12,6 @@ from app import forms, views
 urlpatterns = [
     path('', views.home, name='home'),
     path('leerRegistro/', views.leerRegistro, name='leerRegistro'),
-    path('about/', views.about, name='about'),
     path('login/',
          LoginView.as_view
          (
