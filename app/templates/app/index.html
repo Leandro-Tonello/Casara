@@ -6,12 +6,11 @@
     <table class="table table-striped mt-3">
         <thead>
             <tr>
-                <th scope="col">Nro</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Hora</th>
-                <th scope="col">Operador</th>
+                <th scope="col">ID</th>
+                <th scope="col">Fecha y hora</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
                 <th scope="col">Maquina</th>
-                <th scope="col">Piso</th>
                 <th scope="col">Registro</th>
                 <th scope="col">Descripcion</th>
 
@@ -20,26 +19,23 @@
         <tbody>
             <tr>
                 <th scope="row">1</th>
-                <td>12/06/23</td>
-                <td>10:00</td>
-                <td>Nahuel Romanovf</td>
+                <td>12/06/23 10:00</td>
+                <td>Nahuel</td>
+                <td>Romanovf</td>
                 <td>REA030</td>
-                <td>Planta Baja</td>
                 <td>Elab Hypersol L: 1106</td>
                 <td><a href="{% url 'leerRegistro' %}">Leer</td>
 
 
             </tr>
             <tr>
-                <th scope="row">2</th>
-                <td>12/06/23</td>
-                <td>10:00</td>
-                <td>Facundo Rubiolo</td>
-                <td>REA027</td>
-                <td>Planta Baja</td>
-                <td>CIP MAYOR </td>
-                <td><a href="#">Leer</td>
-
+                <th scope="row">1</th>
+                <td>12/06/23 10:00</td>
+                <td>Leandro</td>
+                <td>Tonello</td>
+                <td>REA030</td>
+                <td>Elab Hypersol L: 1106</td>
+                <td><a href="{% url 'leerRegistro' %}">Leer</td>
             </tr>
             
         </tbody>
